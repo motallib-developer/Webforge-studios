@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="WebForge Studios — modern, responsive websites for businesses, creators and brands.">
+<meta name="theme-color" content="#080b14">
+<title>WebForge Studios — Websites That Build Your Brand</title>
+<style>
+:root{--bg:#070910;--card:#0e1220;--card2:#12182a;--text:#f5f7ff;--muted:#a8afc2;--line:rgba(255,255,255,.09);--a:#6c63ff;--b:#00d9ff;--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 75% 0%,rgba(108,99,255,.18),transparent 30%),radial-gradient(circle at 10% 20%,rgba(0,217,255,.08),transparent 25%),var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}.container{width:min(92%,var(--max));margin:auto}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(7,9,16,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:21px;font-weight:900;letter-spacing:-.7px}.logo span{color:var(--b)}
+.links{display:flex;gap:25px;align-items:center}.links a{color:#c8cde0;font-size:14px}.links a:hover{color:#fff}
+.menu{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:10px;padding:8px 11px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:13px;padding:13px 19px;font-weight:800;cursor:pointer;transition:.2s}
+.primary{background:linear-gradient(100deg,var(--a),var(--b));color:#fff;box-shadow:0 12px 35px rgba(76,103,255,.22)}.primary:hover{transform:translateY(-2px)}
+.secondary{border:1px solid var(--line);background:rgba(255,255,255,.03);color:#fff}.secondary:hover{background:rgba(255,255,255,.07)}
+.hero{padding:145px 0 90px}.heroGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+.badge{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border:1px solid rgba(0,217,255,.25);border-radius:999px;background:rgba(0,217,255,.07);color:#bdf6ff;font-size:12px;font-weight:800}
+h1{font-size:clamp(45px,7vw,78px);line-height:1.01;letter-spacing:-3px;margin:18px 0}.grad{background:linear-gradient(100deg,#fff 15%,#9ba1ff 52%,#55edff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:18px;max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.mini{display:flex;gap:25px;flex-wrap:wrap;color:#cbd1e2;font-size:13px}.mini strong{color:#fff;font-size:20px;display:block}
+.mock{border:1px solid var(--line);border-radius:25px;background:linear-gradient(145deg,#151b30,#090c15);padding:14px;box-shadow:0 30px 90px rgba(0,0,0,.4);transform:rotate(2deg)}
+.screen{height:390px;border-radius:17px;background:linear-gradient(145deg,#10162b,#090b12);overflow:hidden;border:1px solid var(--line)}.bar{height:42px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px;padding:0 13px}.dot{width:8px;height:8px;border-radius:50%;background:#777}.screenbody{padding:35px}.fakeLine{height:10px;border-radius:20px;background:#252d49;margin:12px 0}.fakeLine.big{width:75%;height:38px;background:linear-gradient(90deg,#6c63ff,#00d9ff)}.fakeCard{height:110px;border:1px solid var(--line);border-radius:15px;margin-top:25px;background:rgba(255,255,255,.035)}
+section{padding:90px 0}.sectionHead{text-align:center;max-width:700px;margin:0 auto 45px}.eyebrow{color:#7deeff;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:2px}.sectionHead h2{font-size:clamp(30px,4vw,46px);line-height:1.1;margin:9px 0 13px;letter-spacing:-1.5px}.sectionHead p,.muted{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:20px;padding:27px}.icon{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(108,99,255,.25),rgba(0,217,255,.15));font-size:22px;margin-bottom:18px}.card h3{font-size:19px;margin-bottom:7px}.card p{color:var(--muted);font-size:14px}
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{overflow:hidden;border-radius:20px;border:1px solid var(--line);background:var(--card)}.projectVisual{height:210px;background:linear-gradient(135deg,#161d35,#080a11);padding:20px;display:flex;align-items:end}.browser{width:100%;height:145px;border:1px solid var(--line);border-radius:12px;background:#0c1020;padding:12px}.browser .fakeLine.big{height:22px;width:60%;margin-top:15px}.projectInfo{padding:20px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.tag{font-size:11px;border:1px solid var(--line);padding:5px 8px;border-radius:99px;color:#b9c0d4}
+.process{counter-reset:step}.step{position:relative}.num{font-size:13px;font-weight:900;color:#72efff;margin-bottom:12px}
+.priceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}.price{position:relative}.featured{border-color:rgba(0,217,255,.45);box-shadow:0 20px 70px rgba(0,217,255,.08)}.ribbon{position:absolute;right:18px;top:18px;font-size:10px;font-weight:900;padding:6px 9px;border-radius:99px;background:#fff;color:#080910}.price h3{font-size:20px}.amount{font-size:39px;font-weight:950;margin:10px 0}.amount small{font-size:13px;color:var(--muted);font-weight:500}.features{list-style:none;margin:18px 0 25px}.features li{padding:7px 0;color:#c8cedd;font-size:14px}.features li::before{content:"✓";color:#66edff;font-weight:900;margin-right:8px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:20px;overflow:hidden}.stat{text-align:center;padding:28px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat strong{display:block;font-size:30px}.stat span{color:var(--muted);font-size:13px}
+.faq{max-width:850px;margin:auto}.faq details{border-bottom:1px solid var(--line);padding:18px 0}.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);padding:12px 25px 0 0;font-size:14px}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px}.contactBox{background:linear-gradient(145deg,#11182b,#0a0d16);border:1px solid var(--line);border-radius:22px;padding:30px}.contactList{margin-top:25px;display:grid;gap:15px}.contactItem{padding:15px;border:1px solid var(--line);border-radius:13px}.contactItem small{display:block;color:#7deeff}.form{display:grid;gap:13px}.form input,.form textarea,.form select{width:100%;border:1px solid var(--line);background:#090c15;color:#fff;border-radius:12px;padding:13px;outline:none}.form textarea{min-height:130px;resize:vertical}.form input:focus,.form textarea:focus,.form select:focus{border-color:#5bdbff}
+.cta{padding:60px 0}.ctaBox{text-align:center;border:1px solid var(--line);border-radius:25px;padding:55px 25px;background:radial-gradient(circle at 50% 0,rgba(108,99,255,.25),transparent 50%),#0c101b}.ctaBox h2{font-size:clamp(30px,5vw,52px);line-height:1.1;margin-bottom:12px}.ctaBox p{color:var(--muted);max-width:600px;margin:0 auto 22px}
+footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.social{display:flex;gap:15px}.social a:hover{color:#fff}
+@media(max-width:850px){.links{display:none;position:absolute;top:72px;left:0;right:0;background:#080b13;padding:18px 4%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.links.open{display:flex}.menu{display:block}.heroGrid,.contact{grid-template-columns:1fr}.mock{max-width:520px;margin:auto}.grid3,.work,.priceGrid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}@media(max-width:560px){section{padding:65px 0}.hero{padding-top:125px}.grid3,.work,.priceGrid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}h1{letter-spacing:-2px}.screen{height:330px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="container navin">
+<a class="logo" href="#home">WebForge <span>Studios</span></a>
+<div class="links" id="links">
+<a href="#home">Home</a><a href="#services">Services</a><a href="#work">Projects</a><a href="#process">Process</a><a href="#pricing">Pricing</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+</div><button class="menu" id="menu">☰</button></div></nav>
+
+<main>
+<section class="hero" id="home"><div class="container heroGrid">
+<div>
+<span class="badge">✦ SPECIAL OFFER • Websites from ₹2,000</span>
+<h1>We build websites that make your <span class="grad">business look premium.</span></h1>
+<p>WebForge Studios creates modern, fast, mobile-friendly websites for local businesses, creators, startups and brands — designed to turn visitors into customers.</p>
+<div class="actions"><a class="btn primary" href="#contact">Start Your Project →</a><a class="btn secondary" href="#work">View Our Work</a></div>
+<div class="mini"><div><strong>100%</strong>Responsive</div><div><strong>Fast</strong>Performance</div><div><strong>24/7</strong>Online Presence</div></div>
+</div>
+<div class="mock"><div class="screen"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="screenbody"><div class="fakeLine" style="width:25%"></div><div class="fakeLine big"></div><div class="fakeLine" style="width:90%"></div><div class="fakeLine" style="width:70%"></div><div class="fakeCard"></div></div></div></div>
+</div></section>
+
+<section id="services"><div class="container"><div class="sectionHead"><div class="eyebrow">What we do</div><h2>Everything your digital presence needs.</h2><p>From a simple business website to a complete brand-ready web presence.</p></div>
+<div class="grid3">
+<div class="card"><div class="icon">🌐</div><h3>Business Websites</h3><p>Professional websites that explain what you do, build trust and make it easy for customers to contact you.</p></div>
+<div class="card"><div class="icon">📱</div><h3>Responsive Design</h3><p>Looks great on phones, tablets and desktops so customers can browse anywhere.</p></div>
+<div class="card"><div class="icon">🎨</div><h3>UI / UX Design</h3><p>Clean layouts, strong visual hierarchy and simple navigation built around your customers.</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Speed Optimisation</h3><p>Lightweight pages and sensible code for a quick, smooth browsing experience.</p></div>
+<div class="card"><div class="icon">🔍</div><h3>SEO Basics</h3><p>Search-friendly structure, metadata and content foundations to help your website get discovered.</p></div>
+<div class="card"><div class="icon">🛠️</div><h3>Maintenance</h3><p>Content updates, small changes and ongoing support after your website goes live.</p></div>
+</div></div></section>
+
+<section id="work"><div class="container"><div class="sectionHead"><div class="eyebrow">Selected work</div><h2>Projects built to impress.</h2><p>Replace these demo cards with your live client and personal projects as your portfolio grows.</p></div>
+<div class="work">
+<div class="project"><div class="projectVisual"><div class="browser"><div class="fakeLine" style="width:30%"></div><div class="fakeLine big"></div><div class="fakeLine" style="width:85%"></div></div></div><div class="projectInfo"><h3>National Gym</h3><p class="muted">Modern fitness business website with schedule, admission form and social links.</p><div class="tags"><span class="tag">Business</span><span class="tag">Responsive</span></div></div></div>
+<div class="project"><div class="projectVisual"><div class="browser"><div class="fakeLine" style="width:25%"></div><div class="fakeLine big"></div><div class="fakeLine" style="width:75%"></div></div></div><div class="projectInfo"><h3>Kolkata Biryani</h3><p class="muted">Food-focused restaurant experience designed to make visitors hungry.</p><div class="tags"><span class="tag">Restaurant</span><span class="tag">UI/UX</span></div></div></div>
+<div class="project"><div class="projectVisual"><div class="browser"><div class="fakeLine" style="width:32%"></div><div class="fakeLine big"></div><div class="fakeLine" style="width:80%"></div></div></div><div class="projectInfo"><h3>Teachers Day</h3><p class="muted">Interactive celebration website with playful Gen-Z styling and animations.</p><div class="tags"><span class="tag">Creative</span><span class="tag">Interactive</span></div></div></div>
+</div>
+<div style="text-align:center;margin-top:25px"><a class="btn secondary" href="https://github.com/motallib-developer" target="_blank" rel="noopener">See All Projects on GitHub ↗</a></div>
+</div></section>
+
+<section id="process"><div class="container"><div class="sectionHead"><div class="eyebrow">Our process</div><h2>Simple from idea to launch.</h2><p>No complicated process. You tell us what you need; we turn it into a polished website.</p></div>
+<div class="grid3 process">
+<div class="card step"><div class="num">01 / DISCOVER</div><h3>Tell us your idea</h3><p>We understand your business, audience, pages, features and preferred style.</p></div>
+<div class="card step"><div class="num">02 / DESIGN</div><h3>We build</h3><p>We create the layout, write the structure and develop the responsive website.</p></div>
+<div class="card step"><div class="num">03 / REVIEW</div><h3>You give feedback</h3><p>We refine the website based on your feedback and make the final adjustments.</p></div>
+<div class="card step"><div class="num">04 / TEST</div><h3>Quality check</h3><p>We check mobile layout, links, forms, navigation and overall usability.</p></div>
+<div class="card step"><div class="num">05 / LAUNCH</div><h3>Go live</h3><p>Your website is connected to your chosen hosting/domain and made ready for customers.</p></div>
+<div class="card step"><div class="num">06 / SUPPORT</div><h3>Keep growing</h3><p>Need updates later? We can help maintain and improve your website.</p></div>
+</div></div></section>
+
+<section id="pricing"><div class="container"><div class="sectionHead"><div class="eyebrow">Transparent pricing</div><h2>Choose what fits your business.</h2><p>Starter pricing for small businesses. Final pricing depends on pages, features and content.</p></div>
+<div class="priceGrid">
+<div class="card price"><h3>Starter</h3><div class="amount">₹2,000 <small>/ starting</small></div><p class="muted">Perfect for a simple online presence.</p><ul class="features"><li>1–3 pages</li><li>Mobile responsive</li><li>Modern design</li><li>Contact / WhatsApp CTA</li><li>Basic SEO setup</li></ul><a class="btn secondary" href="#contact">Choose Starter</a></div>
+<div class="card price featured"><span class="ribbon">POPULAR</span><h3>Business</h3><div class="amount">₹4,000 <small>/ starting</small></div><p class="muted">For businesses that want a stronger presence.</p><ul class="features"><li>Up to 6 pages</li><li>Custom UI/UX</li><li>Gallery / services</li><li>Forms & social links</li><li>Basic SEO + performance</li><li>Launch support</li></ul><a class="btn primary" href="#contact">Choose Business</a></div>
+<div class="card price"><h3>Custom</h3><div class="amount">Let's Talk</div><p class="muted">For advanced or unique requirements.</p><ul class="features"><li>Custom number of pages</li><li>Advanced features</li><li>Custom interactions</li><li>Booking / forms</li><li>Priority support</li><li>Tailored quote</li></ul><a class="btn secondary" href="#contact">Get a Quote</a></div>
+</div></div></section>
+
+<section id="about"><div class="container"><div class="sectionHead"><div class="eyebrow">Why WebForge Studios</div><h2>Small studio. Big attention to detail.</h2><p>We focus on making websites that are clear, modern and genuinely useful for the people visiting them.</p></div>
+<div class="stats"><div class="stat"><strong>₹2K+</strong><span>Starting packages</span></div><div class="stat"><strong>100%</strong><span>Responsive layouts</span></div><div class="stat"><strong>6</strong><span>Core services</span></div><div class="stat"><strong>1:1</strong><span>Client-focused approach</span></div></div>
+<div style="height:22px"></div>
+<div class="grid3"><div class="card"><h3>✨ Modern first</h3><p>We avoid generic-looking pages and create a visual identity that fits your business.</p></div><div class="card"><h3>📲 Mobile first</h3><p>Your customers are on their phones. We make the mobile experience a priority.</p></div><div class="card"><h3>🤝 Clear communication</h3><p>You always know what is being built and what information we need from you.</p></div></div>
+</div></section>
+
+<section id="faq"><div class="container"><div class="sectionHead"><div class="eyebrow">FAQ</div><h2>Questions clients usually ask.</h2></div><div class="faq">
+<details open><summary>How much does a website cost?</summary><p>Our starter offer begins at ₹2,000. The final price depends on pages, features, content and complexity.</p></details>
+<details><summary>How long does it take?</summary><p>Simple websites can often be completed quickly once all content and requirements are available. Larger projects take longer.</p></details>
+<details><summary>Will my website work on mobile?</summary><p>Yes. Responsive design is included so the website adapts to phones, tablets and desktop screens.</p></details>
+<details><summary>Do I need to buy a domain and hosting?</summary><p>A domain and hosting are normally separate services. We can guide you through the setup and launch process.</p></details>
+<details><summary>Can you update my website later?</summary><p>Yes. Maintenance and content updates can be arranged after launch.</p></details>
+<details><summary>How do I start a project?</summary><p>Use the contact form below and tell us your business name, website type, required pages and any examples you like.</p></details>
+</div></div></section>
+
+<section id="contact"><div class="container"><div class="sectionHead"><div class="eyebrow">Let's work together</div><h2>Have an idea? Let's build it.</h2><p>Send your requirements and we'll get back to you.</p></div>
+<div class="contact">
+<div class="contactBox"><h3>Start a conversation</h3><p class="muted">For the fastest response, include your business name, what you do, required pages and your approximate budget.</p>
+<div class="contactList">
+<div class="contactItem"><small>GITHUB</small><a href="https://github.com/motallib-developer" target="_blank" rel="noopener">github.com/motallib-developer</a></div>
+<div class="contactItem"><small>INSTAGRAM</small><span><a href="https://www.instagram.com/webforge_studios01?stkn=dzc5bWhjb2I5MWJy" target="_blank" rel="noopener">@webforge_studios01 ↗</a></span></div>
+<div class="contactItem"><small>EMAIL</small><span><a href="mailto:motallibmdabdul18@gmail.com">motallibmdabdul18@gmail.com</a></span></div>
+<div class="contactItem"><small>AVAILABILITY</small><span>Freelance projects • Remote</span></div>
+</div></div>
+<div class="contactBox"><form class="form" id="contactForm">
+<input id="name" required placeholder="Your name">
+<input id="business" placeholder="Business / brand name">
+<input id="email" type="email" required placeholder="Email address">
+<select id="type"><option value="">What do you need?</option><option>Business website</option><option>Restaurant website</option><option>Portfolio website</option><option>Landing page</option><option>Other / Custom</option></select>
+<textarea id="message" required placeholder="Tell us about your project..."></textarea>
+<button class="btn primary" type="submit">Send Project Enquiry →</button>
+<p id="formNote" class="muted" style="font-size:12px"></p>
+</form></div>
+</div></div></section>
+
+<section class="cta"><div class="container"><div class="ctaBox"><h2>Your business deserves a better website.</h2><p>Let's turn your idea into a website you're proud to share.</p><a class="btn primary" href="#contact">Build My Website →</a></div></div></section>
+</main>
+
+<footer><div class="container foot"><div>© 2026 WebForge Studios. All rights reserved.</div><div class="social"><a href="#home">Home</a><a href="#work">Projects</a><a href="#contact">Contact</a><a href="https://github.com/motallib-developer" target="_blank" rel="noopener">GitHub ↗</a></div></div></footer>
+
+<script>
+const menu=document.getElementById('menu'),links=document.getElementById('links');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+document.getElementById('contactForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const n=document.getElementById('name').value.trim(), b=document.getElementById('business').value.trim(), em=document.getElementById('email').value.trim(), t=document.getElementById('type').value, m=document.getElementById('message').value.trim();
+ const subject=encodeURIComponent('Website Project Enquiry - '+(b||n));
+ const body=encodeURIComponent(`Name: ${n}\nBusiness: ${b}\nEmail: ${em}\nProject: ${t}\n\nRequirements:\n${m}`);
+ /* Replace this email with your real agency email before publishing. */
+ window.location.href='mailto:motallibmdabdul18@gmail.com?subject='+subject+'&body='+body;
+ document.getElementById('formNote').textContent='Opening your email app… ';
+});
+</script>
+</body>
+</html>
